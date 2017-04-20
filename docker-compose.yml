@@ -1,0 +1,10 @@
+version: "2"
+services:
+  python:
+     image: lepinkainen/ubuntu-python-base
+     volumes:
+     - "./:/code"
+     working_dir: 
+         "/code"
+     command: /bin/bash -c "apt-get install cmake build-essential libgtk-3-dev libboost-all-dev -y; pip install pillow; pip install numpy; pip install scipy; pip install click; pip install olefile; pip install scikit-image; pip install face-recognition-models; pip install dlib; pip install face-recognition; python main.py -p Andrew.jpg -f ./photos;"
+
